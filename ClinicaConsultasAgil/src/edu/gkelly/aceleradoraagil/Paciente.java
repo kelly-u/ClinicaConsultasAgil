@@ -11,7 +11,7 @@ public class Paciente {
 
     public void cadastrarPaciente(){
         System.out.println("Digite o nome completo do paciente:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         
         System.out.println("Digite o telefone do paciente:");
         int numero = scanner.nextInt();
