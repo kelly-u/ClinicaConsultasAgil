@@ -1,7 +1,6 @@
+package edu.gkelly.aceleradoraagil;
 import java.util.Locale;
 import java.util.Scanner;
-
-import edu.gkelly.aceleradoraagil.Paciente;
 
 public class Clinica {
     public static void main(String[] args) throws Exception {
