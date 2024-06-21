@@ -1,22 +1,24 @@
-package edu.gkelly.aceleradoraagil;
-
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Paciente {
     String nome;
-    int numero;
+    String numero;
 
-    Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+    public Paciente(String nome) {
+        this.nome = nome;
+    }
 
-    public void cadastrarPaciente(){
-        System.out.println("Digite o nome completo do paciente:");
-        String nome = scanner.nextLine();
-        
-        System.out.println("Digite o telefone do paciente:");
-        int numero = scanner.nextInt();
+    public String getNome() {
+        return nome;
+    }
 
-        // Adicionar o paciente à lista de Pacientes Cadastrados
-        System.out.println("Paciente cadastrado com sucesso");
+    public String getNumero() {
+        return numero;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
     }
 }
