@@ -5,16 +5,16 @@ public class Consulta {
     String dia;
     String hora;
     String especialidade;
-
+ 
    public Consulta(String dia, String hora, String especialidade) {
         this.dia = dia;
         this.hora = hora;
         this.especialidade = especialidade;
     }
 
-public String getHora() {
-       return hora;
-   }
+    public String getHora() {
+        return hora;
+    }
 
    public String getDia() {
        return dia;
@@ -26,7 +26,7 @@ public String getHora() {
 
    @Override
    public String toString() {
-       return dia;
+       return "Dia: " + dia + " Hora: " + hora + " Especialidade: " + especialidade;
    }
 
 }
