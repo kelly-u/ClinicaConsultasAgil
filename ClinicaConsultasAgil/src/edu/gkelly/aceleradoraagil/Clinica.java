@@ -35,12 +35,15 @@ public class Clinica {
                     System.out.println("Digite o telefone do paciente:");
                     numero = scanner.next();
 
-                    listaPaciente.adicionarPaciente(nome);
+                    listaPaciente.adicionarPaciente(nome, numero);
                     System.out.println("Paciente cadastrado com sucesso");
-                    System.out.println("A quantidade de pacientes é: " + listaPaciente.obterNumeroTotalPacientes());
-                    listaPaciente.visualizarPacientes();
+                    //System.out.println("A quantidade de pacientes é: " + listaPaciente.obterNumeroTotalPacientes());
                     break;
                 case 2:
+                    listaPaciente.visualizarPacientes();
+                    System.out.println("Digite o número que corresponde ao usuário desejado:");
+                    int escolherUsuario = scanner.nextInt();
+
                     System.out.println("Digite o dia da consulta:");
                     String dia = scanner.next();
 
@@ -50,6 +53,7 @@ public class Clinica {
                     System.out.println("Digite a especialidade da consulta:");
                     String especialidade = scanner2.nextLine();
 
+                    // Comparar o adicionar consulta com o adicionar paciente e ver oq ue tem de diferente!
                     listaConsulta.adicionarConsulta(dia, hora, especialidade);
 
                     System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
