@@ -1,4 +1,3 @@
-package edu.gkelly.aceleradoraagil;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -6,13 +5,15 @@ public class Clinica {
     public static void main(String[] args) throws Exception {
 
         int numeroMenu = 0;
+        String nome = "";
+        String numero = "";
 
-        do{
+        ListaConsulta listaConsulta = new ListaConsulta();
+        ListaPaciente listaPaciente = new ListaPaciente();
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        Scanner scanner2 = new Scanner(System.in).useLocale(Locale.US);
 
-            Paciente paciente = new Paciente();
-            Consulta consulta = new Consulta();
-            Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-
+        do {
             System.out.println("");
 
             System.out.println("********* BEM-VINDO(A) À CLÍNICA CONSULTAS ÁGIL *********");
@@ -28,21 +29,42 @@ public class Clinica {
 
             switch (numeroMenu) {
                 case 1:
-                    paciente.cadastrarPaciente();
+                    System.out.println("Digite o nome completo do paciente:");
+                    nome = scanner2.nextLine();
+
+                    System.out.println("Digite o telefone do paciente:");
+                    numero = scanner.next();
+
+                    listaPaciente.adicionarPaciente(nome);
+                    System.out.println("Paciente cadastrado com sucesso");
+                    System.out.println("A quantidade de pacientes é: " + listaPaciente.obterNumeroTotalPacientes());
+                    listaPaciente.visualizarPacientes();
                     break;
                 case 2:
-                    consulta.marcarConsulta();
+                    System.out.println("Digite o dia da consulta:");
+                    String dia = scanner.next();
+
+                    System.out.println("Digite a hora da consulta:");
+                    String hora = scanner.next();
+
+                    System.out.println("Digite a especialidade da consulta:");
+                    String especialidade = scanner2.nextLine();
+
+                    listaConsulta.adicionarConsulta(dia, hora, especialidade);
+
+                    System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
+                    listaConsulta.visualizarConsultas();
                     break;
                 case 3:
-                    consulta.cancelarConsulta();
+                    // listaConsulta.removerConsulta(dia, hora, especialidade);
                     break;
                 case 4:
                     break;
                 default:
                     System.out.println("Número inválido!");
-                    break;    
+                    break;
             }
-    } while(numeroMenu >= 1 && numeroMenu < 4);
+        } while (numeroMenu >= 1 && numeroMenu < 4);
     }
 
 }
