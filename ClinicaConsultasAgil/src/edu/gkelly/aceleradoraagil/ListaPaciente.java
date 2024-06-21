@@ -4,13 +4,14 @@ import java.util.List;
 public class ListaPaciente {
 
     private List<Paciente> pacienteList;
+    int i = 0;
 
     public ListaPaciente() {
         this.pacienteList = new ArrayList<>();
     }
 
-    public void adicionarPaciente(String nome){
-        pacienteList.add(new Paciente(nome));
+    public void adicionarPaciente(String nome, String numero){
+        pacienteList.add(new Paciente(nome, numero));
     }
     
     public int obterNumeroTotalPacientes(){
@@ -18,7 +19,11 @@ public class ListaPaciente {
     }
 
     public void visualizarPacientes(){
-        System.out.println(pacienteList);
+        for (Paciente paciente : pacienteList) {
+            System.out.println(i + " = " + pacienteList.get(i));
+            i ++;
+        }
+        
     }
 
     /*
