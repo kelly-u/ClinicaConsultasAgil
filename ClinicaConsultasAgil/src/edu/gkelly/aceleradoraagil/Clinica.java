@@ -24,6 +24,7 @@ public class Clinica {
             System.out.println("2 - Marcações de consultas");
             System.out.println("3 - Cancelamento de consultas");
             System.out.println("4 - Sair");
+            System.out.println("");
 
             numeroMenu = scanner.nextInt();
 
@@ -36,11 +37,17 @@ public class Clinica {
                     numero = scanner.next();
 
                     listaPaciente.adicionarPaciente(nome, numero);
-                    System.out.println("Paciente cadastrado com sucesso");
-                    //System.out.println("A quantidade de pacientes é: " + listaPaciente.obterNumeroTotalPacientes());
+                    System.out.println("PACIENTE CADASTRADO COM SUCESSO!");
+
+                    System.out.println("Paciente já cadastrado!");
+
+                    // System.out.println("A quantidade de pacientes é: " +
+                    // listaPaciente.obterNumeroTotalPacientes());
                     break;
                 case 2:
                     listaPaciente.visualizarPacientes();
+
+                    System.out.println("");
                     System.out.println("Digite o número que corresponde ao usuário desejado:");
                     int escolherUsuario = scanner.nextInt();
 
@@ -54,45 +61,40 @@ public class Clinica {
                     String especialidade = scanner2.nextLine();
 
                     Paciente pacienteConsulta = listaPaciente.obterPacienteIndex(escolherUsuario);
-                    
+
                     listaConsulta.adicionarConsulta(pacienteConsulta, dia, hora, especialidade);
 
-                    System.out.println("Consulta marcada com sucesso");
+                    System.out.println("CONSULTA MARCADA COM SUCESSO!");
 
                     System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
-                    //listaConsulta.visualizarConsultas();
+                    // listaConsulta.visualizarConsultas();
                     break;
                 case 3:
-                    // Exibir lista de agendamentos
+                    System.out.println("******** LISTA DE AGENDAMENTO ********");
 
+                    listaConsulta.visualizarConsultas();
 
+                    System.out.println("");
 
-                    // Usuário escolhe o númeor doagendamento:
+                    System.out.println("Digite o número que corresponde ao agendamento que deseja remarcar:");
+                    int remarcarAgendamento = scanner.nextInt();
 
+                    System.out.println("");
 
+                    System.out.println(listaConsulta.obterConsultaIndex(remarcarAgendamento));
 
-                    /* A partir do númeor escolhido, retorna apenas aquele agendamento com:
-                        - DATA
-                        - HORA
-                        - ESPECIALIDADE
-                    */
+                    System.out.println("Deseja cancelar esta consulta?");
+                    System.out.println("Digite 1 para confirmar ou qualquer numero para cancelar:");
+                    int confirmacaoCancelamentoConsulta = scanner.nextInt();
 
-
-
-                    /* pergunta se quer cancelar a consulta
-
-                    SE NÃO, segue o fluxo
-
-                    SE SIM, chama o remover consulta
-
-                    volta para o menu principal
-
-                    */
+                    if (confirmacaoCancelamentoConsulta == 1) {
+                        System.out.println("Removendo, viu?");
+                    }
                     break;
                 case 4:
                     break;
                 default:
-                    System.out.println("Número inválido!");
+                    System.out.println("NÚMERO INVÁLIDO!");
                     break;
             }
         } while (numeroMenu >= 1 && numeroMenu < 4);

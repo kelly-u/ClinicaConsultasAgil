@@ -4,7 +4,6 @@ import java.util.List;
 public class ListaConsulta {
 
     private List<Consulta> consultaList;
-    int i = 0;
 
     public ListaConsulta() {
         this.consultaList = new ArrayList<>();
@@ -30,10 +29,15 @@ public class ListaConsulta {
         return consultaList.size();
     }
 
+    public Consulta obterConsultaIndex(int index){
+        return consultaList.get(index);
+    }
+
     public void visualizarConsultas(){
+        int j = 0;
         for (Consulta consulta : consultaList) {
-            System.out.println(i + " = " + consultaList.get(i));
-            i ++;
+            System.out.println(j + " = " + consultaList.get(j));
+            j ++;
         }  
     }
 

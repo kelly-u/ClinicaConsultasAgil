@@ -1,6 +1,0 @@
-Agendamento de consultas só pega uma vez, depois dá excessão.
-
-Ver no agendamento de pacientes e comparar com consultas (pacientes está ok).
-
-Só falta isso para acaabr a parte 2.
-Vamos visualizar só para ver se cadastrou. Mas, essa partee vvamos usar no cancelamento. Ates de cancelar, temos que visualizar a lista.
