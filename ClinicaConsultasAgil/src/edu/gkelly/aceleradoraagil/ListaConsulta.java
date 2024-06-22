@@ -4,13 +4,14 @@ import java.util.List;
 public class ListaConsulta {
 
     private List<Consulta> consultaList;
+    int i = 0;
 
     public ListaConsulta() {
         this.consultaList = new ArrayList<>();
     }
 
-    public void adicionarConsulta(String dia, String hora, String especialidade){
-        consultaList.add(new Consulta(dia, hora, especialidade));
+    public void adicionarConsulta(Paciente pacienteConsulta, String dia, String hora, String especialidade){
+        consultaList.add(new Consulta( pacienteConsulta, dia, hora, especialidade));
     }
 
     public void removerConsulta(String dia, String hora, String especialidade){
@@ -30,9 +31,11 @@ public class ListaConsulta {
     }
 
     public void visualizarConsultas(){
-        System.out.println(consultaList);
+        for (Consulta consulta : consultaList) {
+            System.out.println(i + " = " + consultaList.get(i));
+            i ++;
+        }  
     }
-
 
 
 
