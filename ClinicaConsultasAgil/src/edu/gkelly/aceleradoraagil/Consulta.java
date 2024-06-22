@@ -2,11 +2,12 @@ import java.util.List;
 
 public class Consulta {
 
+    Paciente paciente;
     String dia;
     String hora;
     String especialidade;
  
-   public Consulta(String dia, String hora, String especialidade) {
+   public Consulta(Paciente paciente, String dia, String hora, String especialidade) {
         this.dia = dia;
         this.hora = hora;
         this.especialidade = especialidade;
