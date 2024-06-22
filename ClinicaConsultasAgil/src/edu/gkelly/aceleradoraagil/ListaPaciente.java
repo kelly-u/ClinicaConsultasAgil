@@ -4,7 +4,6 @@ import java.util.List;
 public class ListaPaciente {
 
     private List<Paciente> pacienteList;
-    int i = 0;
 
     public ListaPaciente() {
         this.pacienteList = new ArrayList<>();
@@ -18,12 +17,16 @@ public class ListaPaciente {
         return pacienteList.size();
     }
 
+    public Paciente obterPacienteIndex(int index){
+        return pacienteList.get(index);
+    }
+
     public void visualizarPacientes(){
+        int i = 0;
         for (Paciente paciente : pacienteList) {
             System.out.println(i + " = " + pacienteList.get(i));
             i ++;
-        }
-        
+        }  
     }
 
     /*
