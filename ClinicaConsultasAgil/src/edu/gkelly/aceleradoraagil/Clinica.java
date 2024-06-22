@@ -53,14 +53,41 @@ public class Clinica {
                     System.out.println("Digite a especialidade da consulta:");
                     String especialidade = scanner2.nextLine();
 
-                    // Comparar o adicionar consulta com o adicionar paciente e ver oq ue tem de diferente!
-                    listaConsulta.adicionarConsulta(dia, hora, especialidade);
+                    Paciente pacienteConsulta = listaPaciente.obterPacienteIndex(escolherUsuario);
+                    
+                    listaConsulta.adicionarConsulta(pacienteConsulta, dia, hora, especialidade);
+
+                    System.out.println("Consulta marcada com sucesso");
 
                     System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
-                    listaConsulta.visualizarConsultas();
+                    //listaConsulta.visualizarConsultas();
                     break;
                 case 3:
-                    // listaConsulta.removerConsulta(dia, hora, especialidade);
+                    // Exibir lista de agendamentos
+
+
+
+                    // Usuário escolhe o númeor doagendamento:
+
+
+
+                    /* A partir do númeor escolhido, retorna apenas aquele agendamento com:
+                        - DATA
+                        - HORA
+                        - ESPECIALIDADE
+                    */
+
+
+
+                    /* pergunta se quer cancelar a consulta
+
+                    SE NÃO, segue o fluxo
+
+                    SE SIM, chama o remover consulta
+
+                    volta para o menu principal
+
+                    */
                     break;
                 case 4:
                     break;
