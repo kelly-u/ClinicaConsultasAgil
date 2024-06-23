@@ -5,8 +5,12 @@ public class Clinica {
     public static void main(String[] args) throws Exception {
 
         int numeroMenu = 0;
+        int remarcarAgendamento = 0;
         String nome = "";
         String numero = "";
+        String dia = "";
+        String hora = "";
+        String especialidade = "";
 
         ListaConsulta listaConsulta = new ListaConsulta();
         ListaPaciente listaPaciente = new ListaPaciente();
@@ -37,9 +41,6 @@ public class Clinica {
                     numero = scanner.next();
 
                     listaPaciente.adicionarPaciente(nome, numero);
-                    System.out.println("PACIENTE CADASTRADO COM SUCESSO!");
-
-                    System.out.println("Paciente já cadastrado!");
 
                     // System.out.println("A quantidade de pacientes é: " +
                     // listaPaciente.obterNumeroTotalPacientes());
@@ -52,32 +53,28 @@ public class Clinica {
                     int escolherUsuario = scanner.nextInt();
 
                     System.out.println("Digite o dia da consulta:");
-                    String dia = scanner.next();
+                    dia = scanner.next();
 
                     System.out.println("Digite a hora da consulta:");
-                    String hora = scanner.next();
+                    hora = scanner.next();
 
                     System.out.println("Digite a especialidade da consulta:");
-                    String especialidade = scanner2.nextLine();
+                    especialidade = scanner2.nextLine();
 
                     Paciente pacienteConsulta = listaPaciente.obterPacienteIndex(escolherUsuario);
 
                     listaConsulta.adicionarConsulta(pacienteConsulta, dia, hora, especialidade);
 
-                    System.out.println("CONSULTA MARCADA COM SUCESSO!");
-
-                    System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
+                    //System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
                     // listaConsulta.visualizarConsultas();
                     break;
                 case 3:
-                    System.out.println("******** LISTA DE AGENDAMENTO ********");
-
                     listaConsulta.visualizarConsultas();
 
                     System.out.println("");
 
                     System.out.println("Digite o número que corresponde ao agendamento que deseja remarcar:");
-                    int remarcarAgendamento = scanner.nextInt();
+                    remarcarAgendamento = scanner.nextInt();
 
                     System.out.println("");
 
@@ -88,8 +85,9 @@ public class Clinica {
                     int confirmacaoCancelamentoConsulta = scanner.nextInt();
 
                     if (confirmacaoCancelamentoConsulta == 1) {
-                        System.out.println("Removendo, viu?");
+                        listaConsulta.removerConsulta(dia, hora, especialidade);
                     }
+                    System.out.println("Total de consultas: " + listaConsulta.obterNumeroTotalConsultas());
                     break;
                 case 4:
                     break;

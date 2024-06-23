@@ -4,6 +4,7 @@ import java.util.List;
 public class ListaConsulta {
 
     private List<Consulta> consultaList;
+    private List<Consulta> consultasParaRemover = new ArrayList<>();
 
     public ListaConsulta() {
         this.consultaList = new ArrayList<>();
@@ -11,11 +12,10 @@ public class ListaConsulta {
 
     public void adicionarConsulta(Paciente pacienteConsulta, String dia, String hora, String especialidade){
         consultaList.add(new Consulta( pacienteConsulta, dia, hora, especialidade));
+        System.out.println("CONSULTA MARCADA COM SUCESSO!");
     }
 
     public void removerConsulta(String dia, String hora, String especialidade){
-
-        List<Consulta> consultasParaRemover = new ArrayList<>();
 
         for(Consulta c : consultaList){
             if(c.getDia().equalsIgnoreCase(dia) && c.getHora().equalsIgnoreCase(hora) && c.getEspecialidade().equalsIgnoreCase(especialidade)){
@@ -23,6 +23,7 @@ public class ListaConsulta {
             }
         }
         consultaList.removeAll(consultasParaRemover);
+        System.out.println("CONSULTA CANCELADA COM SUCESSO!");
     }
 
     public int obterNumeroTotalConsultas(){
@@ -35,6 +36,7 @@ public class ListaConsulta {
 
     public void visualizarConsultas(){
         int j = 0;
+        System.out.println("******** LISTA DE AGENDAMENTO ********");
         for (Consulta consulta : consultaList) {
             System.out.println(j + " = " + consultaList.get(j));
             j ++;
